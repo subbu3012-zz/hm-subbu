@@ -14,7 +14,7 @@ export class DashboardComponent implements OnInit {
     public noteList: NoteMaster[] = [];
     public uploadFile = new Upload();
 
-    constructor(private dashServ: DashboardService) {
+    constructor(public dashServ: DashboardService) {
 
     }
 
