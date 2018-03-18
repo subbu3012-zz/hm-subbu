@@ -1,7 +1,14 @@
+<nav class="navbar navbar-dark bg-dark sticky-top">
+    <button class="navbar-toggler" type="button">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <span class="navbar-brand">My NoteBook</span>
+</nav>
+<mat-progress-bar *ngIf="this.dashServ.showProgressBar" mode="indeterminate"></mat-progress-bar>
+
 <div style="padding:15px 0px;" class="container">
-    <h3 style="color:#3f51b5">My NoteBook</h3>
     <div class="card-columns">
-        <div style="border: #3f51b5 solid 3px;" class="card p-3">
+        <div style="border: #343a40 solid 3px;" class="card p-3">
             <div class="card-block">
                 <app-new-note></app-new-note>
             </div>
