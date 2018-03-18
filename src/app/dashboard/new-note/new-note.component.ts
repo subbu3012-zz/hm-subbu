@@ -22,6 +22,7 @@ export class NewNoteComponent implements OnInit {
 
 	public newNote = new NoteMaster();
 	public noteTypeMasterData: NoteTypeMaster[] = NOTETYPEMASTERDATA;
+	
 	constructor(private dashBoardServ: DashboardService) {
 
 	}
@@ -59,12 +60,6 @@ export class NewNoteComponent implements OnInit {
 		}
 	}
 
-	public prepareAttachmentForUpload() {
-		if (this.noteUploadFile && this.allowedFileExtensions.exec(this.noteUploadFile.name)) {
-
-		}
-	}
-
 	public resetuploadFile() {
 		this.uploadFile.nativeElement.value = "";
 		this.uploadFileState.text = "";
@@ -73,12 +68,12 @@ export class NewNoteComponent implements OnInit {
 	}
 
 	public addNewNote() {
-		console.log('this.newNote', this.newNote);
 		this.setNoteType();
 		this.dashBoardServ.addNoteData(this.newNote);
 		this.newNote = new NoteMaster();
 		this.noteUploadFile = null;
 		this.uploadFileState = new FileExtensionInfo();
+		this.dashBoardServ.openSnackBar("Note Added Succesfully", "DISMISS");
 	}
 
 	public setNoteType() {
