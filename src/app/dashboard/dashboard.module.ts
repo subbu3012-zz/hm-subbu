@@ -5,18 +5,11 @@ import { DashboardComponent } from './dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { MatMenuModule } from '@angular/material/menu';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { MatCardModule } from '@angular/material/card';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatIconModule } from '@angular/material/icon';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatSelectModule } from '@angular/material/select';
-import { MatSliderModule } from '@angular/material/slider';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { MatRadioModule } from '@angular/material/radio';
 import { DashboardService } from './dashboard.service';
 
 import { AngularFireModule } from 'angularfire2';
@@ -45,16 +38,13 @@ export const firebaseConfig = {
         AngularFireDatabaseModule, // for database
         AngularFireAuthModule,
         HttpClientModule,
-        MatInputModule, MatButtonModule, MatCardModule, MatSnackBarModule,
-        MatIconModule, MatDatepickerModule, MatSelectModule, MatSliderModule, MatSlideToggleModule,
+        MatInputModule, MatButtonModule, MatSnackBarModule, MatIconModule,
         CommonModule,
         DashboardRoutingModule,
         HttpClientModule,
-        MatMenuModule,
         MatIconModule,
         MatButtonModule,
-        MatRadioModule,
-        MatProgressBarModule, MatSelectModule
+        MatProgressBarModule
     ],
     declarations: [DashboardComponent, NewNoteComponent, NoteViwerComponent],
     providers: [DashboardService]
