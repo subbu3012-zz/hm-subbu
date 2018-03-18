@@ -1,0 +1,13 @@
+<div style="padding:15px 0px;" class="container">
+    <h3 style="color:#3f51b5">My NoteBook</h3>
+    <div class="card-columns">
+        <div style="border: #3f51b5 solid 3px;" class="card p-3">
+            <div class="card-block">
+                <app-new-note></app-new-note>
+            </div>
+        </div>
+        <div *ngFor="let note of this.noteList;let i = index;">
+            <app-note-viewer [noteData]="note"></app-note-viewer>
+        </div>
+    </div>
+</div>
