@@ -1,0 +1,43 @@
+<div *ngIf="note.noteType">
+    <div [style.backgroundColor]="getNoteBGColor(note.noteType)" *ngIf="note.noteType == 'picture'" class="card p-3">
+        <a [href]="note.noteAttachment.url" download title="Download Image">
+            <img class="card-img-top img-fluid" [src]="note.noteAttachment.url" [alt]="note.noteAttachment.name">
+        </a>
+        <div class="card-block">
+            <h4 class="card-title">{{note.noteTitle}}</h4>
+            <p class="card-text">{{note.noteDesc}}</p>
+            <footer>
+                <small class="text-muted">{{note.noteCreatedDate}}</small>
+            </footer>
+        </div>
+    </div>
+    <div [style.backgroundColor]="getNoteBGColor(note.noteType)" *ngIf="note.noteType == 'text'" class="card p-3">
+        <blockquote class="card-block card-blockquote">
+            <p>{{note.noteDesc}}</p>
+            <footer>
+                <small class="text-muted">{{note.noteCreatedDate}}</small>
+            </footer>
+        </blockquote>
+    </div>
+    <div [style.backgroundColor]="getNoteBGColor(note.noteType)" *ngIf="note.noteType == 'article'" class="card p-3">
+        <div class="card-block">
+            <h4 class="card-title">{{note.noteTitle}}</h4>
+            <p class="card-text">{{note.noteDesc}}</p>
+            <footer>
+                <small class="text-muted">{{note.noteCreatedDate}}</small>
+            </footer>
+        </div>
+    </div>
+    <div [style.backgroundColor]="getNoteBGColor(note.noteType)" *ngIf="note.noteType == 'document'" class="card p-3">
+        <div class="card-block">
+            <h4 class="card-title">{{note.noteTitle}}</h4>
+            <p class="card-text">{{note.noteDesc}}</p>
+            <footer>
+                <small class="text-muted">{{note.noteCreatedDate}}</small>
+                <a [href]="note.noteAttachment.url" download title="Download Attachment">
+                    <mat-icon style="font-size:24px;">file_download</mat-icon>
+                </a>
+            </footer>
+        </div>
+    </div>
+</div>
