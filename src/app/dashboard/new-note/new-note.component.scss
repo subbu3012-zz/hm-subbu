@@ -1,0 +1,19 @@
+
+.inputs {
+  position:absolute;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  background: #00f;
+  z-index:110;
+  cursor: pointer;
+}
+.divs {
+  position: relative;
+  background-color: #fff;
+}
+
+mat-form-field{
+  width: 100%
+}

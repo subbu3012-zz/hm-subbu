@@ -1,0 +1,26 @@
+<div align="center">
+    <div class="new-note-container">
+        <mat-form-field class="example-full-width">
+            <input [(ngModel)]="this.newNote.noteTitle" matInput placeholder="Note Title" [errorStateMatcher]="matcher">
+            <!-- <mat-hint>Errors appear instantly!</mat-hint> -->
+        </mat-form-field>
+        <mat-form-field>
+            <textarea [(ngModel)]="this.newNote.noteDesc" matInput placeholder="Note Description" matTextareaAutosize matAutosizeMinRows="2"
+                matAutosizeMaxRows="5"></textarea>
+        </mat-form-field>
+        <div style="margin-top:3vh" align="center">
+            <div style="margin:3vh;padding: 2vh;border: grey dashed 2px;cursor:pointer;background-color: #f8f8f8" class="divs clickable">
+                <input #uploadFile type='file' (change)="fileChangeEvent($event, null)" placeholder="Upload file..." class="inputs clickable"
+                    id="img-upload">
+                <mat-icon style="font-size:36px;color: #3f51b5;">backup</mat-icon>
+                <p>
+                    {{uploadFileState.text?(uploadFileState.text.length>30?("..."+uploadFileState.text.substring(uploadFileState.text.length-30,
+                    uploadFileState.text.length)):uploadFileState.text):"No file selected"}}
+                </p>
+            </div>
+        </div>
+        <button style="margin-top:2vh" mat-raised-button (click)="addNewNote()" color="primary">
+            Add New Note
+        </button>
+    </div>
+</div>
