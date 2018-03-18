@@ -1,7 +1,7 @@
 <div *ngIf="note.noteType">
     <div [style.backgroundColor]="getNoteBGColor(note.noteType)" *ngIf="note.noteType == 'picture'" class="card p-3">
         <a [href]="note.noteAttachment.url" download title="Download Image">
-            <img class="card-img-top img-fluid" [src]="note.noteAttachment.url" [alt]="note.noteAttachment.name">
+            <img class="card-img-sm-top img-fluid" [src]="note.noteAttachment.url" [alt]="note.noteAttachment.name">
         </a>
         <div class="card-block">
             <h4 class="card-title">{{note.noteTitle}}</h4>
@@ -34,8 +34,8 @@
             <p class="card-text">{{note.noteDesc}}</p>
             <footer>
                 <small class="text-muted">{{note.noteCreatedDate}}</small>
-                <a [href]="note.noteAttachment.url" download title="Download Attachment">
-                    <mat-icon style="font-size:24px;">file_download</mat-icon>
+                <a [href]="note.noteAttachment.url"  download title="Download Attachment">
+                    <mat-icon style="font-size:24px;top: 5px;position: relative;">file_download</mat-icon>
                 </a>
             </footer>
         </div>
